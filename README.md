@@ -4,14 +4,14 @@ Helpful links, processes, and architecture notes for the MEAN stack.
 
 ### Key Workflow & Concepts
 
-  1. Start build scripts First.
-  2. Define main client app and folder structure.
-  3. Setup baseline API server with sessions/security middleware.
-  4. Setup User and Config Data Contracts.
-  5. Establish data models for static and dynamic content.
-  6. Establish pub/sub channels and workers/queues.
-  7. Begin working through API endpoints, setup auto-managed references.
-  8. Begin building client app to be used in multiple release environments.
+  1. [Start build scripts First.](#1-build-scripts-gulp-or-grunt)
+  2. [Define main client app and folder structure.](#2-client-app-setup)
+  3. [Setup baseline API server with sessions/security middleware.](#3-api-setup)
+  4. [Setup User and Config Data Contracts.](#4-user--config-data)
+  5. [Establish data models for static and dynamic content.](#5-data-models)
+  6. [Establish pub/sub channels and workers/queues.](#6-channels--workers)
+  7. [Begin working through API endpoints, setup auto-managed references.](#7-api-endpoints)
+  8. [Begin building client app to be used in multiple release environments.](#8-client-app-philosophy--roadmap)
 
 
 ### Helpful Resources
