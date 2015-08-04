@@ -136,11 +136,52 @@ With defined models, the User contract could define a simple helper method for r
 
 ### 6. Channels & Workers
 
+##### Channels
+
+There are several wonderful pub/sub Saas products, many of which work well with the client/server. These are great for starting quickly and not having to maintain/build servers with the same functionality.
+
+It is recommended that a Saas service be used unless the scale of the app reaches need for higher volume. 
+
+Once this is the case, there are several things to be aware of:
+
+  * Hosting pub/sub servers can become highly expensive when allowing for large concurrent connections. This is usually the largest point of failure.
+  * Keep all key/value pairs abstract enough to allow for lower total subscriptions.
+  * Build for latencies and fallbacks. Websockets do not run consistently across browsers. A good rule of thumb is keep messages to increments of 200ms, any faster and things could start to fail.
+  * Use polling for extreme fallbacks only. This can drastically increase performance especially if the request stops the user from continuing through an action.
+
+##### Workers
+
+Keep long processes outside of your request time with worker processes. See [zeromq](http://zeromq.org/) along with [haproxy](http://www.haproxy.org/), this can be setup to run a distributed queue for managing laborsome read/write tasks.
+Workers should handle any request that has multiple writes or needs to be manipulated in some way. Redis is a great simple data store, 
+
+Another great use case is using workers to send push notifications to the different providers (APNS, GCM).
 
 
 ### 7. API Endpoints
 
-
+The best way for both client/server to develop is through an automated system of endpoints with data requirements. Swagger, a tool for API documentation, can be setup for taking all data models/endpoints and generating a functional UI for testing. This is especially useful when creating new endpoints and communicating them with the client side developer.
 
 ### 8. Client App Philosophy & Roadmap
+
+##### Philosophy
+
+The client side core logic is the most important thing to keep separate. If done properly, client side code can be a separate package that can be re-used within each client distribution profile.
+
+##### Roadmap
+
+In an ideal world, a platform can be built once and then distributed everywhere to any device. 
+
+The easiest way to accomplish this with angular is to setup modules. The main app module will consist of core functionality that should act the same for any release. Each distribution will then consist of importing the core module, and performing override logic specific to the hardware.
+
+Sample workflow: 
+
+  1. Setup web app
+  2. Create distribution build scripts that import core
+  3. Create distribution project with minor tweaks separate from core
+  4. Run full build script, packaging core and distributions into separate releases.
+  5. Test & Deploy
+
+  
+
+
 
