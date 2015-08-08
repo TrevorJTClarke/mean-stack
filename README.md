@@ -35,6 +35,11 @@ Helpful links, processes, and architecture notes for the MEAN stack.
   * [Postman](https://www.getpostman.com/) - Helpful API testing tool
   * [SocketIO](http://socket.io/) - pub/sub for nodejs
 
+### Load Testing Resources
+  * [Blitz](https://www.blitz.io/) - Saas quick testing, the free tier is free and great at single node snapshots
+  * [Siedge](http://www.nginxtips.com/nginx-benchmarking-using-siedge/) - More laborsome but its a free reliable solution
+  * [Nginx Websocket Testing](https://www.nginx.com/blog/nginx-websockets-performance/) - Haven't tried this, but looks super promising for Websocket testing
+  * [Raygun](https://raygun.io/) - Logger, super helpful
 
 ### 1. Build Scripts (Gulp or Grunt)
 
